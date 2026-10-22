@@ -104,3 +104,5 @@ Restart the entire browser after installing a Windows voice, then use Ctrl+F5 to
 Playback errors show their browser error code and specific recovery suggestions. For `not-allowed`, click the test button directly in a regular browser tab rather than a VS Code preview or programmatically triggering speech. For silent playback, check tab muting, Windows Volume Mixer, and output device. Test another Taiwan voice or test the installed voice in Windows settings.
 
 The optional `C:\Users\top1\.cline\data\workspaces\chat\Taiwan-mandarin\diagnose_audio.py` script lists real Edge voices and captures playback start/end/error events using Selenium. It cannot verify what a human actually hears.
+
+-Learning Git and GitHub, one step at a time!
