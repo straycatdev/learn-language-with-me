@@ -106,3 +106,4 @@ Playback errors show their browser error code and specific recovery suggestions.
 The optional `C:\Users\top1\.cline\data\workspaces\chat\Taiwan-mandarin\diagnose_audio.py` script lists real Edge voices and captures playback start/end/error events using Selenium. It cannot verify what a human actually hears.
 
 -Learning Git and GitHub, one step at a time!
+-Trying new push/pull in github
