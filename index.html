@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16786b">
+  <title>Formosa — Learn Mandarin, Japanese & Korean</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="lessons.js" defer></script>
+  <script src="languages.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Formosa home"><span class="brand-mark">山</span><span>formosa<span class="brand-caption">YOUR TAIWAN JOURNEY</span></span></a>
+    <div class="learner-label">YOUR LEARNING SPACE</div>
+    <button id="menu-toggle" class="button menu-toggle" aria-expanded="false" aria-controls="main-navigation">☰ Menu</button>
+    <nav id="main-navigation" aria-label="Main navigation">
+      <button class="nav-item active" data-view="home"><span aria-hidden="true">⌂</span> My learning</button>
+      <button class="nav-item" data-view="lessons"><span aria-hidden="true">▤</span> All lessons</button>
+      <button class="nav-item" data-view="flashcards"><span aria-hidden="true">▱</span> Flashcards</button>
+      <button class="nav-item" data-view="quiz"><span aria-hidden="true">✧</span> Practice quiz</button>
+      <button class="nav-item" data-view="conversation"><span aria-hidden="true">☏</span> Conversation</button>
+    </nav>
+    <div class="sidebar-note"><span class="little-sun">☀</span><strong>A little every day.</strong><p>Kahit 10 minutes lang.<br>Small steps, real progress.</p></div>
+    <div class="sidebar-footer"><span class="avatar">K</span><div><strong>Kumusta, learner!</strong><small>Beginner · Taiwan Mandarin</small></div></div>
+  </aside>
+  <div class="page">
+    <header class="topbar"><span>Made for Filipino learners <span class="flag" aria-label="Philippines">🇵🇭</span></span><div><div class="language-picker"><label for="language-select">I want to learn</label><select id="language-select"><option value="zh-TW">🇹🇼 Taiwan Mandarin</option><option value="ja-JP">🇯🇵 Japanese</option><option value="ko-KR">🇰🇷 Korean</option></select></div><button id="sound-settings" class="button audio-setup" aria-label="Show pronunciation audio settings">♫ <span>Set up Chinese audio</span></button></div></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer">Learn the words. Find your voice. <span>慢慢來 · Take it one step at a time.</span></footer>
+  </div>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="audio-dialog" aria-labelledby="audio-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Close audio settings">×</button></form>
+    <div class="eyebrow">YOUR LISTENING COMPANION</div><h2 id="audio-title">Let’s set up Chinese audio</h2>
+    <p>Makinig, ulitin, at dahan-dahan lang. Choose a Taiwan Mandarin voice, listen slowly, then repeat aloud.</p>
+    <div id="voice-status" class="voice-status" role="status" aria-live="polite"></div>
+    <label for="voice-select">1. Choose your Mandarin voice</label><select id="voice-select" aria-describedby="voice-accent-note"></select>
+    <p id="voice-accent-note" class="muted">Taiwan Mandarin (zh-TW) is recommended. Other Mandarin voices may have a different accent. Cantonese voices are not used.</p>
+    <label class="check-row"><input type="checkbox" id="slow-audio" checked> 2. Slow it down for easier practice</label>
+    <div class="audio-actions"><button id="test-audio" class="button primary">▶ 3. Try 你好 · Hello</button><button id="refresh-voices" class="button">↻ Check voices again</button><button id="reset-audio" class="button">Reset voice selection</button><button id="stop-audio" class="button">■ Stop</button></div>
+    <p id="playback-status" class="muted" role="status" aria-live="polite">Tap a phrase’s ▶ button anywhere in a lesson to listen.</p>
+    <details><summary>Voice installed, but still no sound?</summary><p>Changing the Windows narrator voice does not select this website’s voice. Choose <strong>Microsoft Hanhan, Yating, or Zhiwei (zh-TW)</strong> in the menu above, then tap Try 你好.</p><ol><li>Fully exit your browser, including background windows, then reopen it. If necessary, restart Windows once after installing the voice.</li><li>Reload this page with <strong>Ctrl+F5</strong>. Choose Reset voice selection, then Check voices again.</li><li>Open the site in a normal, updated Edge or Chrome browser window, not an embedded preview. Check the tab isn’t muted, Windows Volume Mixer, and your speaker/headphone output.</li><li>Try another installed Taiwan voice. If none work, test the voice in Windows Speech settings to check the installation itself.</li></ol><p id="voice-diagnostics" class="muted"></p></details>
+    <details id="install-guide"><summary>Need a voice? Follow the installation guide</summary>
+      <label for="guide-device">Your device</label><select id="guide-device"><option value="windows">Windows 10 / 11</option><option value="android">Android</option><option value="ios">iPhone / iPad</option><option value="mac">Mac</option></select>
+      <section data-guide="windows"><h3>Install Taiwan Mandarin on Windows</h3><ol><li>Open <strong>Settings → Time & Language → Speech</strong>.</li><li>Under <strong>Manage voices</strong>, choose <strong>Add voices</strong>. Select <strong>Chinese (Traditional, Taiwan)</strong>, then Add. Names may include <strong>Hanhan, Yating, or Zhiwei</strong>, depending on Windows.</li><li>If it isn’t listed, open <strong>Language / Language & region → Add a language</strong>, add Chinese (Traditional, Taiwan), and install its <strong>Text-to-speech / Speech</strong> language feature. You don’t need to change your Windows display language.</li><li>Wait for the download, fully close and reopen your browser, then select <strong>Check voices again</strong> here.</li></ol><a class="button" href="ms-settings:speech">Open Windows Speech settings ↗</a><p class="muted">Windows may ask for administrator approval. On a managed computer, ask your IT administrator. Narrator-only natural voices may not be exposed to websites.</p><a class="help-link" href="https://support.microsoft.com/en-us/windows/appendix-a-supported-languages-and-voices-4486e345-7730-53da-fcfe-55cc64300f01" target="_blank" rel="noopener noreferrer">Official Microsoft voice installation instructions ↗</a></section>
+      <section data-guide="android" hidden><h3>Set up Mandarin on Android</h3><ol><li>In Settings, search for <strong>Text-to-speech output</strong> (often under Accessibility or Languages & input).</li><li>Open your preferred speech engine’s settings, then <strong>Install voice data</strong>. Download Chinese / Mandarin; choose Taiwan if offered.</li><li>Restart your browser, then tap <strong>Check voices again</strong>.</li></ol><p>Names vary by manufacturer and speech engine. Not every Android device offers a Taiwan voice or exposes downloaded voices to the browser.</p></section>
+      <section data-guide="ios" hidden><h3>Set up Mandarin on iPhone / iPad</h3><ol><li>Open <strong>Settings → Accessibility → Spoken Content</strong> (called <strong>Read & Speak</strong> on some versions) <strong>→ Voices</strong>.</li><li>Choose Chinese, then a <strong>Chinese (Taiwan)</strong> voice if offered. Tap the download icon.</li><li>Reopen Safari, return here, and tap <strong>Check voices again</strong>.</li></ol><p>Availability in websites varies by iOS version. A downloaded accessibility voice is not guaranteed to appear in every browser.</p></section>
+      <section data-guide="mac" hidden><h3>Set up Mandarin on Mac</h3><ol><li>Open <strong>System Settings → Accessibility → Spoken Content</strong> (or <strong>Read & Speak</strong>).</li><li>Open the system voice menu and <strong>Manage Voices</strong>. Download a Chinese (Taiwan) voice if offered.</li><li>Reopen your browser, then tap <strong>Check voices again</strong>.</li></ol><p>Menu names and browser voice availability vary by macOS version.</p></section>
+    </details>
+    <p class="muted audio-privacy">This website cannot install system voices for visitors. Audio uses your device’s speech service, not native-speaker recordings. Some voices need internet access and may process text through their provider. We do not record your microphone or grade your accent. If audio isn’t available, keep practicing with Pinyin and translations.</p>
+  </dialog>
+</body>
+</html>
